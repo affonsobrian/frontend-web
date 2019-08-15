@@ -1,10 +1,14 @@
 import React from 'react';
 import './login.css';
+import logo from '../imgs/logo.png'
 
 function Login(){
     return(
-        <div>
+        <div className="center">
             <form>
+                <div>
+                    <img src={logo} className="logo"></img>
+                </div>
                 <div>
                     <input type="text" placeholder="Usuário"></input>
                 </div>
