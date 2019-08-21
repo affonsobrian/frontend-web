@@ -1,11 +1,7 @@
-html {
-  background: white;
-}
-
 .center {
     margin: auto;
     width: 15%;
-    padding: 15%;
+    padding: 40px;
   }
 
 .logo {
