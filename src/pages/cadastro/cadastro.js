@@ -1,6 +1,6 @@
 import React from 'react';
 import './cadastro.css';
-import logo from '../imgs/logo.png'
+import logo from '../imgs/logo.png';
 
 function Cadastro(){
     return(
@@ -25,7 +25,8 @@ function Cadastro(){
                     <input type="text" placeholder="Rua"></input>
                 </div>
                 <div>
-                    <input type="text" placeholder="Número"></input>
+                    <label></label>
+                    <input type="number" min="0" max="99999999" placeholder="Número"></input>
                 </div>
                 <div>
                     <input type="text" placeholder="Bairro"></input>
@@ -36,16 +37,15 @@ function Cadastro(){
                 <div>
                     <input type="text" placeholder="Estado"></input>
                 </div>
-                
-                <div>
-                    <input type="text" placeholder="CEP"></input>
-                </div>
-                
                 <div>
                     <input type="password" placeholder="Senha"></input>
                 </div>
                 <div>
-                    <button type="submit">Cadastro</button>
+                    <input type="password" placeholder="Confirmar senha"></input>
+                </div>
+                
+                <div>
+                    <button action="#" type="submit">Cadastro</button>
                 </div>
 
                 <div>
