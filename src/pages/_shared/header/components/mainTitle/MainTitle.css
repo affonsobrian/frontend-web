@@ -1,0 +1,54 @@
+/*TODO css for the main title*/
+/* @font-face {
+    font-family: 'Onetime';
+    /* font-style: normal; */
+    /* font-weight: 400;
+    src: url('../../../../../resources/fonts/OneTime.ttf') format('truetype')
+ }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .mainTitle button{
+        border: none;
+        background-color: #1596ff;
+        font-size: 45px;
+        color: #fff;
+        padding-top: 5px;
+        padding-left: 0px;
+        cursor: pointer;
+        font-family: 'Onetime';
+
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .mainTitle button{
+        border: none;
+        background-color: #1596ff;
+        font-size: 45px;
+        color: #fff;
+        padding-top: 5px;
+        padding-left: 0px;
+        cursor: pointer;
+        font-family: 'Onetime';
+    }
+
+    .mainTitle button img {
+        max-width: 200px;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
