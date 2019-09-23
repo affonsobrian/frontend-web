@@ -28,10 +28,12 @@ export default class Buttons extends Component {
             )
         }
         else {
+            if(this.props.token)
+            var register = <button id='registerButton' onClick={e => {this.handleButtonClicked(e, 'register')}}>Register</button>
             output = (
                 <div id='headerButtons' className='headerButtons'>
                     <button id='loginButton' onClick={e => {this.handleButtonClicked(e, 'login')}}>Login</button>
-                    <button id='registerButton' onClick={e => {this.handleButtonClicked(e, 'register')}}>Register</button>
+                   {register}
                 </div>
             )
         }

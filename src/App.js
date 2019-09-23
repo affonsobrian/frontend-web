@@ -65,7 +65,7 @@ export default class App extends Component {
 			case 'register':
 				currentView = <Cadastro onClick={this.handleButtonsClicks}/>;
 				break;
-				case 'password-recover':
+			case 'password-recover':
 				currentView = <RecuperarSenha onClick={this.handleButtonsClicks} />;
 				break;
 			default:
