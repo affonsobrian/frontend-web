@@ -33,7 +33,7 @@ export default class Buttons extends Component {
             output = (
                 <div id='headerButtons' className='headerButtons'>
                     <button id='loginButton' onClick={e => {this.handleButtonClicked(e, 'login')}}>Login</button>
-                    {register}
+                   {register}
                 </div>
             )
         }

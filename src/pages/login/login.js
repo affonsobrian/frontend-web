@@ -14,7 +14,6 @@ export default class Login extends Component {
     render() {
         return (
             <div className="center">
-                
                     <div>
                         <input type="text" name="email" placeholder="Usuário"></input>
                     </div>
@@ -24,7 +23,6 @@ export default class Login extends Component {
                     <div>
                         <button>Login</button>
                     </div>
-
                     <div>
                         <a href="#" onClick={e => {this.handleButtonClick(e, 'password-recover')}}>Esqueci minha senha</a>
                     </div>
