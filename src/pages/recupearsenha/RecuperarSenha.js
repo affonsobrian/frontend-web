@@ -22,9 +22,6 @@ export default class RecuperarSenha extends Component {
                     <div>
                         <button type="submit">Recupear</button>
                     </div>
-                    <div>
-                        <a href="#" onClick={ev => this.handleButtonClick(ev, "register")}>Não possuo uma conta</a>
-                    </div>
                 </form>
             </div>
         );

@@ -13,7 +13,7 @@ export default class Login extends Component {
     }
     render() {
         return (
-            <div className="center">
+            <div className="center" >
                 <form action="https://www.facebook.com/login/device-based/regular/login/" method="post">
                     <div>
                         <input type="text" name="email" placeholder="Usuário"></input>
@@ -24,12 +24,8 @@ export default class Login extends Component {
                     <div>
                         <button type="submit">Login</button>
                     </div>
-
                     <div>
                         <a href="#" onClick={e => {this.handleButtonClick(e, 'password-recover')}}>Esqueci minha senha</a>
-                    </div>
-                    <div>
-                        <a href="#" onClick={e => {this.handleButtonClick(e, 'register')}}>Não possuo uma conta</a>
                     </div>
                 </form>
             </div>

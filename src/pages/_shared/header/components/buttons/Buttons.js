@@ -31,7 +31,7 @@ export default class Buttons extends Component {
             output = (
                 <div id='headerButtons' className='headerButtons'>
                     <button id='loginButton' onClick={e => {this.handleButtonClicked(e, 'login')}}>Login</button>
-                    <button id='registerButton' onClick={e => {this.handleButtonClicked(e, 'register')}}>Register</button>
+                    <button id='registerButton' onClick={e => {this.handleButtonClicked(e, 'register')}}>Cadastro</button>
                 </div>
             )
         }
