@@ -6,6 +6,7 @@ import Footer from './pages/_shared/footer/Footer';
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
 import RecuperarSenha from './pages/recupearsenha/RecuperarSenha'
+import axios from 'axios'
 
 export default class App extends Component {
 	// eslint-disable-next-line no-useless-constructor
@@ -33,9 +34,17 @@ export default class App extends Component {
 			this.setState({ currentView: button })
 	}
 
-	handleLogin = (token, username) => {
-		if (token) {
-			this.setState({ token: token });
+	handleLogin = async (username, password) => {
+		const response = await axios.post(
+		'http://localhost:65345/api/Auth/Login',
+		{ 
+			username: username,
+			password: password
+		},
+		{ headers: { 'Content-Type': 'application/json' } }
+		);
+		if (response.data.Content) {
+			this.setState({ token: response.data.Content });
 			this.setState({ username: username });
 			this.setState({ isLoggedIn: true });
 			this.setState({ currentView: 'home' });
@@ -60,7 +69,7 @@ export default class App extends Component {
 				currentView = <RecuperarSenha onClick={this.handleButtonsClicks} />;
 				break;
 			default:
-				currentView = <Login onClick={this.handleButtonsClicks} />;
+				currentView = <Login onClick={this.handleButtonsClicks} handleLogin={this.handleLogin}/>;
 				break;
 		}
 		// }
