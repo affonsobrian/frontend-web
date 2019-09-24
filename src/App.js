@@ -7,6 +7,7 @@ import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
 import RecuperarSenha from './pages/recupearsenha/RecuperarSenha'
 import axios from 'axios'
+import Patrimonio from './pages/patrimonio/Patrimonio';
 
 export default class App extends Component {
 	// eslint-disable-next-line no-useless-constructor
@@ -65,6 +66,8 @@ export default class App extends Component {
 			case 'register':
 				currentView = <Cadastro onClick={this.handleButtonsClicks}/>;
 				break;
+			case 'patrimonio':
+				currentView = <Patrimonio onClick={this.handleButtonsClicks}/>;
 			case 'password-recover':
 				currentView = <RecuperarSenha onClick={this.handleButtonsClicks} />;
 				break;

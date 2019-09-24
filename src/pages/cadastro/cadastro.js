@@ -25,6 +25,9 @@ export default class Cadastro extends Component {
                         <input type="text" placeholder="RG"></input>
                     </div>
                     <div>
+                        <input type="text" placeholder="E-Mail"></input>
+                    </div>
+                    <div>
                         <button onClick={ev => this.handleButtonClick(ev, "register")}>Cadastrar pessoa</button>
                     </div>
                 </form>
