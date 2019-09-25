@@ -76,7 +76,7 @@ export default class App extends Component {
 
 		return (
 			<div id='page' className='page'>
-				<Header onClick={this.handleButtonsClicks} isLoggedIn={this.state.isLoggedIn} username={this.state.username} />
+				<Header onClick={this.handleButtonsClicks} isLoggedIn={this.state.isLoggedIn} username={this.state.username} token={this.state.token}/>
 				{currentView}
 				<Footer onClick={this.handleButtonsClicks} />
 			</div>

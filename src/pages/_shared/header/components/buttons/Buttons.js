@@ -23,17 +23,16 @@ export default class Buttons extends Component {
             output = (
             <div id='headerButtons' className='headerButtons'>
                 <label>Hello {this.props.username}</label>
+                <button id='registerButton' onClick={e => {this.handleButtonClicked(e, 'register')}}>Register</button>
                 <button id='logoutButton' onClick={e => {this.handleButtonClicked(e, 'logout')}}>Logout</button>
             </div>
             )
         }
         else {
-            if(this.props.token)
-            var register = <button id='registerButton' onClick={e => {this.handleButtonClicked(e, 'register')}}>Register</button>
+            
             output = (
                 <div id='headerButtons' className='headerButtons'>
                     <button id='loginButton' onClick={e => {this.handleButtonClicked(e, 'login')}}>Login</button>
-                   {register}
                 </div>
             )
         }
