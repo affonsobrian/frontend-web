@@ -7,9 +7,10 @@ export default class Cadastro extends Component {
         super(props);
 
         this.state = {
-            firstName: '',
-            lastName: '',
-            RG: ''
+            id: this.props.data.Id,
+            firstName: this.props.data.FirstName,
+            lastName: this.props.data.LastName,
+            RG: this.props.data.RG
         }
 
         this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -20,15 +21,35 @@ export default class Cadastro extends Component {
 
     async handleButtonClick(ev) {
         ev.preventDefault();
-        const response = await axios.post(
-            'http://localhost:65345/api/Person',
-            { 
-                FirstName: this.state.firstName,
-                LastName: this.state.lastName,
-                RG: this.state.RG
-            },
-            { headers: { 'Content-Type': 'application/json' } }
-            );
+        console.log(this.state.id);
+        if(this.state.id) {
+            console.log("vreijgerig");
+            axios.put(
+                'http://localhost:65345/api/Person/' + this.state.id,
+                { 
+                    Id: this.state.id,
+                    FirstName: this.state.firstName,
+                    LastName: this.state.lastName,
+                    RG: this.state.RG
+                },
+                { headers: { 'Content-Type': 'application/json' } }
+            ).then(response => {
+                alert(response.data.Content);
+            });
+        }
+        else {
+            axios.post(
+                'http://localhost:65345/api/Person',
+                { 
+                    FirstName: this.state.firstName,
+                    LastName: this.state.lastName,
+                    RG: this.state.RG
+                },
+                { headers: { 'Content-Type': 'application/json' } }
+            ).then(response => {
+                alert(response.data.Content);
+            });
+        }
     }
 
     handleFistNameChange(ev) {
@@ -57,13 +78,13 @@ export default class Cadastro extends Component {
             <div className="center">
                 <form>
                     <div>
-                        <input type="text" placeholder="Primeiro nome" onChange={this.handleFistNameChange}></input>
+                        <input type="text" placeholder="Primeiro nome" onChange={this.handleFistNameChange} value={this.state.firstName}></input>
                     </div>
                     <div>
-                        <input type="text" placeholder="Último nome" onChange={this.handleLastNameChange}></input>
+                        <input type="text" placeholder="Último nome" onChange={this.handleLastNameChange} value={this.state.lastName}></input>
                     </div>
                     <div>
-                        <input type="text" placeholder="RG" onChange={this.handleRGChange}></input>
+                        <input type="text" placeholder="RG" onChange={this.handleRGChange} value={this.state.RG}></input>
                     </div>
                     <div>
                         <button onClick={this.handleButtonClick}>Cadastrar pessoa</button>

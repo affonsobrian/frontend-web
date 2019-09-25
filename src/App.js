@@ -5,7 +5,8 @@ import Header from './pages/_shared/header/Header';
 import Footer from './pages/_shared/footer/Footer';
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
-import RecuperarSenha from './pages/recupearsenha/RecuperarSenha'
+import RecuperarSenha from './pages/recupearsenha/RecuperarSenha';
+import ListaDePessoas from './pages/lista_de_pessoas/lista_de_pessoas'
 import axios from 'axios'
 
 export default class App extends Component {
@@ -16,10 +17,11 @@ export default class App extends Component {
 		this.state = {
 			currentView: 'login',
 			isLoggedIn: false,
-			token: undefined
+			token: undefined,
+			person: {}
 		}
 
-		this.handleButtonsClicks.bind(this);
+		this.handleButtonsClicks = this.handleButtonsClicks.bind(this);
 	}
 
 	handleButtonsClicks = (button) => {
@@ -49,30 +51,39 @@ export default class App extends Component {
 			this.setState({ isLoggedIn: true });
 			this.setState({ currentView: 'home' });
 		}
+
+	}
+	
+	editPerson = (person) => {
+		this.setState({
+			currentView: 'edit-person',	
+			person: person
+		})
 	}
 
 	render() {
 		let currentView = <Login />;
-		// if(!this.state.isLoggedIn) {
-		// 	this.setState({currentView: 'login'});
-		// }
-		// else
-		// {
+
 		switch (this.state.currentView) {
 			case 'home':
 				currentView = <Home onClick={this.handleButtonsClicks} />;
 				break;
 			case 'register':
-				currentView = <Cadastro onClick={this.handleButtonsClicks}/>;
+				currentView = <Cadastro onClick={this.handleButtonsClicks} data={{}}/>;
 				break;
 			case 'password-recover':
 				currentView = <RecuperarSenha onClick={this.handleButtonsClicks} />;
+				break;
+			case 'list-person':
+				currentView = <ListaDePessoas onClick={this.handleButtonsClicks} edit={this.editPerson}/>;
+				break;
+			case 'edit-person':
+				currentView = <Cadastro onClick={this.handleButtonsClicks} data={this.state.person}/>;
 				break;
 			default:
 				currentView = <Login onClick={this.handleButtonsClicks} handleLogin={this.handleLogin}/>;
 				break;
 		}
-		// }
 
 		return (
 			<div id='page' className='page'>
