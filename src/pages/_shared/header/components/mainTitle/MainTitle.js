@@ -18,7 +18,7 @@ export default class MainTitle extends Component {
     render() {
         return (
         <div id='mainTitle' className='mainTitle'>
-            <button onClick={this.handleButtonClick}><img src={Logo}/></button>
+            <button onClick={this.handleButtonClick}><img alt="Logo" src={Logo}/></button>
         </div>
         )
     }

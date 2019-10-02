@@ -1,68 +1,22 @@
-/*TODO css for the buttons*/
+.headerButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .headerButtons {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+.headerButtons label {
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}
 
-    .headerButtons button {
-        background-color: #1596ff;
-        border: none;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.headerButtons button {
+    background-image: linear-gradient(#4cc175, #2d9e51);;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    .headerButtons label {
-        text-align: center;
-        color: #fff;
-        margin-top: 40px;
-    }
-
-    .headerButtons button:hover {
-        color: lightgray;
-    }
-} 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .headerButtons {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    
-    .headerButtons label {
-        text-align: center;
-        color: #fff;
-        margin-top: 20px;
-    }
-
-    .headerButtons button {
-        background-color: #1596ff;
-        border: none;
-        color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .headerButtons button:hover {
-        color: lightgray;
-    }
-} 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
+.headerButtons button:hover {
+    color: lightgray;
 }

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import './Formulario.css';
-import logo from '../imgs/logo.png';
-import Cadastro from '../cadastro/cadastro'
 
 export default class Formulario extends Component {
     render() {

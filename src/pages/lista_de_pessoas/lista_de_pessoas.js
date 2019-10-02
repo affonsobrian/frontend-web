@@ -19,7 +19,7 @@ export default class ListaDePessoas extends Component {
         axios.delete("http://localhost:65345/api/person/" + id,
             { headers: { 'ContentType': 'application/json' } 
         }).then(response => {
-            alert(response.data.Content);
+            alert(response.data.Message);
             this.getItems();
         });
     }
@@ -48,13 +48,18 @@ export default class ListaDePessoas extends Component {
         <ul>
             {this.state.values.map( (item) => {
                 return (
-                <div key={item.Id}>
-                    <h2>{item.FirstName} {item.LastName}</h2>
-                    <p>{item.Email}</p>     
-                    <p>{item.RG}</p>
-                    <button onClick={e => this.Excluir(e, item.Id)}>Delete</button>
-                    <button onClick={e => this.Edit(e, item)}>Edit</button>
-                </div>
+                <table>
+                    <tr>
+                        <td><div key={item.Id}></div></td>
+                        <td><h2>{item.FirstName} {item.LastName}</h2></td>
+                        <td><p>{item.Email}</p></td>     
+                        <td><p>{item.RG}</p></td>
+                        <td><p>{item.Telephone}</p></td>
+                        <td><button onClick={e => this.Edit(e, item)}>Edit</button></td>
+                        <td><button onClick={e => this.Excluir(e, item.Id)}>Delete</button></td>
+                    </tr>
+                    
+                </table>
                 )
             })}
         </ul>

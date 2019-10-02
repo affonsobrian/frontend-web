@@ -1,84 +1,30 @@
-/*TODO css for the header*/
-/*TODO grid dilplay*/
+.header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-image: linear-gradient(#4cc175, #2d9e51);
+    /* min-height: 5em; */
+}
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .header {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        background-color: #1596ff;
-    }
+.header .logo {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    padding: 10px;
+    display: none;
+}
 
-    .header .logo {
-        grid-column: 1/3;
-        grid-row: 1/3;
-        padding: 10px;
-        display: none;
-    }
+.header .mainTitle {
+    grid-column: 1/4;   
+    grid-row: 1/3;
+    text-align: center; 
+}
 
-    .header .mainTitle {
-        grid-column: 1/13;
-        grid-row: 1/2;
-        text-align: center;
-    }
+.header .headerButtons {
+    grid-column: 9/13;
+    grid-row: 1/3;
+}
 
-    .header .headerButtons {
-        grid-column: 1/13;
-        grid-row: 2/3;
-    }
-
-    .header .search-bar {
-        grid-column: 11/13;
-        grid-row: 1/3;
-        display: none;
-    }
-} 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .header {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        background-color: #1596ff;
-    }
-
-    .header .logo {
-        grid-column: 1/3;
-        grid-row: 1/3;
-        padding: 10px;
-        display: none;
-    }
-
-    .header .mainTitle {
-        grid-column: 1/4;   
-        grid-row: 1/3;
-        text-align: center; 
-    }
-
-    .header .headerButtons {
-        grid-column: 9/11;
-        grid-row: 1/3;
-    }
-
-    .header .search-bar {
-        grid-column: 11/13;
-        grid-row: 1/3;
-    }
-} 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
+.header .search-bar {
+    grid-column: 11/13;
+    grid-row: 1/3;
 }

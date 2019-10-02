@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './pages/home/Home';
 import Header from './pages/_shared/header/Header';
-import Footer from './pages/_shared/footer/Footer';
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
 import RecuperarSenha from './pages/recupearsenha/RecuperarSenha';
-import ListaDePessoas from './pages/lista_de_pessoas/lista_de_pessoas'
-import axios from 'axios'
+import ListaDePessoas from './pages/lista_de_pessoas/lista_de_pessoas';
+import axios from 'axios';
 
 export default class App extends Component {
 	// eslint-disable-next-line no-useless-constructor
@@ -37,21 +36,23 @@ export default class App extends Component {
 	}
 
 	handleLogin = async (username, password) => {
-		const response = await axios.post(
+		await axios.post(
 		'http://localhost:65345/api/Auth/Login',
 		{ 
 			username: username,
 			password: password
 		},
 		{ headers: { 'Content-Type': 'application/json' } }
-		);
-		if (response.data.Content) {
-			this.setState({ token: response.data.Content });
-			this.setState({ username: username });
-			this.setState({ isLoggedIn: true });
-			this.setState({ currentView: 'home' });
-		}
-
+		).then(response => {
+			if (response.data.Content) {
+				this.setState({ token: response.data.Content });
+				this.setState({ username: username });
+				this.setState({ isLoggedIn: true });
+				this.setState({ currentView: 'home' });
+			}
+			else
+				alert(response.data.Message);
+		});
 	}
 	
 	editPerson = (person) => {
@@ -88,8 +89,7 @@ export default class App extends Component {
 		return (
 			<div id='page' className='page'>
 				<Header onClick={this.handleButtonsClicks} isLoggedIn={this.state.isLoggedIn} username={this.state.username} token={this.state.token}/>
-				{currentView}
-				<Footer onClick={this.handleButtonsClicks} />
+				<body className="body">{currentView}</body>
 			</div>
 		);
 	}

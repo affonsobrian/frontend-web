@@ -38,18 +38,18 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div className="center">
-                    <div>
+            <div className="center login-form">
+                    <div className="field-div first-field">
                         <input type="text" name="username" placeholder="Usuário" onChange={this.updateUsername}></input>
                     </div>
-                    <div>
+                    <div className="field-div">
                         <input type="password" name="password" placeholder="Senha" onChange={this.updatePassword}></input>
                     </div>
-                    <div>
-                        <button onClick={this.handleLogin}>Login</button>
+                    <div className="field-div">
+                        <button className="login-button" onClick={this.handleLogin}>Login</button>
                     </div>
-                    <div>
-                        <a href="#" onClick={e => {this.handleButtonClick(e, 'password-recover')}}>Esqueci minha senha</a>
+                    <div className="field-div">
+                        <a href="/" onClick={e => {this.handleButtonClick(e, 'password-recover')}}>Esqueci minha senha</a>
                     </div>
             </div>
         );
