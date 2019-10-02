@@ -1,0 +1,27 @@
+.div-cadastro {
+	/* border: solid 2px lightblue; */
+    background-image: linear-gradient(-45deg, transparent, white);
+	border-radius: 10px;
+	top: 10em;
+	grid-column: 1/13;
+	padding: 0em, 0em, 0em, 0em;
+	max-height: 12em;
+	padding-left: 42vw;
+}
+
+.cadastro-button {
+	position: relative;
+	background: transparent;
+	box-shadow: 2px 2px;
+	width: inherit;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.cadastro-button:focus {
+	outline: none;
+}
+
+.cadastro-button:hover {
+	border: solid 1px gray;
+}
